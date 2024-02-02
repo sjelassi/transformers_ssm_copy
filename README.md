@@ -24,19 +24,11 @@ Other requirements:
 
 ## Synthetic experiments
 
+These experiments are intended to study a) how well the models learn the copy task in distribution b) the length generalization ability of these models c) their performance in lookup tasks where we give a prefix or suffix n-grams. 
+
+This folder covers three tasks: <tt>copy</tt>, <tt>prefix_ngram</tt>, <tt>suffix_ngram</tt> and using three models: Transformers with different positional encodings (<tt>T_rope</tt>, <tt>T_nope</tt>, <tt>T_alibi</tt>,  <tt>T_hard_alibi</tt>), Mamba (<tt>mamba</tt>) and LSTMs (<tt>lstm</tt>). For instance, to run an experiment where we train a Transfomer with RoPE positional encoding on the copy task for strings with length up to 20 and then evalute it on strings of length 20, this is the command to run:
+
 ```
-python3 synthetic_tasks/main.py --model  \
-                                --train_task $TRAIN \
-                                --eval_task  \
-                                --num_masked_heads ${NUM_MASKED_HEADS} \
-                                --min_train_len $MIN_TRAIN_LEN\
-                                --max_train_len $MAX_TRAIN_LEN\
-                                --min_eval_len $MIN_EVAL_LEN\
-                                --max_eval_len $MAX_EVAL_LEN\
-                                --context_len $CONTEXT_LEN\
-                                --eval_context_len $EVAL_CONTEXT_LEN\
-                                --n_gram $N_GRAM\
-                                --length_answer $ANS_LEN\
-                                --vocab_size $VOCAB_SIZE\
-                                --state_dim $STATE_DIM
+python3 synthetic_tasks/main.py --model "T_rope" --train_task "copy" --eval_task  "copy" --min_train_len 5 --max_train_len 20 --min_eval_len 20 --max_eval_len 20
+                               
 ```
