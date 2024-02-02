@@ -49,7 +49,6 @@ python3 pretrained_exps/main.py --model "state-spaces/mamba-370m" \
                 --eval_task "phone_book" \
                 --min_eval_len 20\
                 --max_eval_len 20\
-
 ```
 
 
