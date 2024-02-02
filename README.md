@@ -24,7 +24,7 @@ Other requirements:
 
 ## Synthetic experiments
 
-markdown-body tt br {python3 synthetic_tasks/main.py --model  \
+<tt>python3 synthetic_tasks/main.py --model  \
                                 --train_task $TRAIN \
                                 --eval_task  \
                                 --num_masked_heads ${NUM_MASKED_HEADS} \
@@ -37,4 +37,4 @@ markdown-body tt br {python3 synthetic_tasks/main.py --model  \
                                 --n_gram $N_GRAM\
                                 --length_answer $ANS_LEN\
                                 --vocab_size $VOCAB_SIZE\
-                                --state_dim $STATE_DIM}
+                                --state_dim $STATE_DIM</tt>
