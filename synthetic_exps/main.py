@@ -44,7 +44,7 @@ def parse_args():
     parser.add_argument('--eval_task',choices=["copy","prefix_ngram","suffix_ngram","duplicate_ngram"],
                         required=True, help="tasks to evaluate the model")
     
-    parser.add_argument('--vocab_size', default=10, type=int, help="vocabulary size in the strings. maximum is 26.")
+    parser.add_argument('--vocab_size', default=26, type=int, help="vocabulary size in the strings. maximum is 26.")
     
     parser.add_argument('--n_gram', default=0, type=int, 
             help='''length of the n-gram when training/evaluating on 'prefix_ngram', 'suffix_ngram', 'duplicate_ngram'.
@@ -56,29 +56,29 @@ def parse_args():
     parser.add_argument('--model', choices=['T_nope', 'T_rope', 'T_alibi', "T_hard_alibi",  'lstm', 'mamba'],
             required=True, help='''models starting by 'T' are transformers with different positional embeddings. Other choices
             are mamba and lstm.''')
-    parser.add_argument('--hidden_size', default=768, type=int, help="Hidden size of the models")
-    parser.add_argument('--layers', default=1, type=int, help="Number of layers in the models.")
-    parser.add_argument('--heads', default=12, type=int, help="Number of heads in the transformer models.")
+    parser.add_argument('--hidden_size', default=1024, type=int, help="Hidden size of the models")
+    parser.add_argument('--layers', default=12, type=int, help="Number of layers in the models.")
+    parser.add_argument('--heads', default=16, type=int, help="Number of heads in the transformer models.")
     parser.add_argument('--num_masked_heads', default=8, type=int, help='''Only when model = ''T_hard_alibi''. 
             Number of heads where we apply hard alibi. The remaining heads are set to nope.''')
-    parser.add_argument('--state_dim', default=16, type=int, help='''Only when model = ''mamba''. 
+    parser.add_argument('--state_dim', default=32, type=int, help='''Only when model = ''mamba''. 
             Sets the state dimension of the model.''')
 
     #optimization
     parser.add_argument('--lr', default=1e-5, type=float, help="choice of learning rate")
     parser.add_argument('--epochs', default=1, type=int, help="number of epochs")
-    parser.add_argument('--steps', default=100, type=int, help="number of steps for each epoch")
+    parser.add_argument('--steps', default=2000, type=int, help="number of steps for each epoch")
     
 
-    parser.add_argument('--train_batch_size', default=64, type=int, help="training batch size")
-    parser.add_argument('--eval_batch_size', default=64, type=int, help="evaluation batch size")
-    parser.add_argument('--eval_num_batches', default=1, type=int, help='''number of batches to use for evaluation.
+    parser.add_argument('--train_batch_size', default=8, type=int, help="training batch size")
+    parser.add_argument('--eval_batch_size', default=8, type=int, help="evaluation batch size")
+    parser.add_argument('--eval_num_batches', default=3, type=int, help='''number of batches to use for evaluation.
             useful to have a mean + std over results.''')
     
-    parser.add_argument('--min_train_len', default=8, type=int, help="minimum length of a training example")
-    parser.add_argument('--max_train_len', default=50, type=int, help="maximum length of a training example")
-    parser.add_argument('--min_eval_len', default=40, type=int, help="minimum length of an evaluation example")
-    parser.add_argument('--max_eval_len', default=200, type=int, help="maximum length of an evaluation example")
+    parser.add_argument('--min_train_len', default=5, type=int, help="minimum length of a training example")
+    parser.add_argument('--max_train_len', default=20, type=int, help="maximum length of a training example")
+    parser.add_argument('--min_eval_len', default=10, type=int, help="minimum length of an evaluation example")
+    parser.add_argument('--max_eval_len', default=20, type=int, help="maximum length of an evaluation example")
     
 
     ##context length
