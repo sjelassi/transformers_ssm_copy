@@ -10,4 +10,4 @@ This repository gathers the experiments for the paper "Repeat After Me: Transfor
 
 ## Installation
 
-'''pip install causal-conv1d>=1.1.0'''
+<tt>pip install causal-conv1d>=1.1.0</tt>
