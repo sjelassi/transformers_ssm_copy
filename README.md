@@ -28,7 +28,6 @@ markdown-body tt br {python3 synthetic_tasks/main.py --model  \
                                 --train_task $TRAIN \
                                 --eval_task  \
                                 --num_masked_heads ${NUM_MASKED_HEADS} \
-                                
                                 --min_train_len $MIN_TRAIN_LEN\
                                 --max_train_len $MAX_TRAIN_LEN\
                                 --min_eval_len $MIN_EVAL_LEN\
