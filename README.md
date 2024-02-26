@@ -51,5 +51,14 @@ python3 pretrained_exps/main.py --model "state-spaces/mamba-370m" \
                 --max_eval_len 20\
 ```
 
-##
+## How to cite
+
+```
+@article{jelassi2024repeat,
+  title={Repeat after me: Transformers are better than state space models at copying},
+  author={Jelassi, Samy and Brandfonbrener, David and Kakade, Sham M and Malach, Eran},
+  journal={arXiv preprint arXiv:2402.01032},
+  year={2024}
+}
+```
 
