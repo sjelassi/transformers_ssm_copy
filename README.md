@@ -2,7 +2,7 @@
 
 ## About
 
-This repository gathers the experiments for the paper "Repeat After Me: Transformers are Better than State Space Models at Copying". The experiments divide in two parts: 
+This repository gathers the experiments for the paper [Repeat After Me: Transformers are Better than State Space Models at Copying](https://arxiv.org/abs/2402.01032). The experiments divide in two parts: 
 
 - Synthetic experiments: this covers three tasks: standard copy, prefix key veriant of the n-gram lookup task and the suffix key variant. The models we consider are Transformers (with RoPE, NoPE, ALiBi and Hard-ALiBi positional encodings), Mamba and LSTM.
 
@@ -51,5 +51,5 @@ python3 pretrained_exps/main.py --model "state-spaces/mamba-370m" \
                 --max_eval_len 20\
 ```
 
-
+##
 
